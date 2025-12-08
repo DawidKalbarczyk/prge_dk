@@ -2,13 +2,13 @@
   background: $background-color;
   color: $secondary-color;
   height: 100vh;
-  font-family: 'Lato';
 
   @include flex-center;
 
-  .home_button {
+  .home__button {
     width: fit-content;
     margin-top: 2vh;
+    color: red;
   }
 }
 
