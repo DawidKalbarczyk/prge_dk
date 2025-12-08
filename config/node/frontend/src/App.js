@@ -1,9 +1,10 @@
-import './App.css';
+import Home from "./pages/Home";
+import './styles/style.scss';
 
 function App() {
   return (
-    <div className="App">
-      geoinformatyka zadzi
+    <div className="app">
+      <Home/>
     </div>
   );
 }
