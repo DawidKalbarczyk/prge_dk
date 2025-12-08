@@ -1,5 +1,14 @@
 .app {
-  background-color: gray;
-  width: auto;
-  height: auto;
+  background: $background-color;
+  color: $secondary-color;
+  height: 100vh;
+  font-family: 'Lato';
+
+  @include flex-center;
+
+  .home_button {
+    width: fit-content;
+    margin-top: 2vh;
+  }
 }
+
