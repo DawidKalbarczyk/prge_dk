@@ -39,7 +39,7 @@ jobs: ## Definiuje to co ma być robione
         run: npm run build
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: config/node/frontend/build
 
