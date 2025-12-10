@@ -29,9 +29,7 @@ function MapComponent(props) {
     return (
 
 
-        <div className="mapComponent" ref={mapRef}>
-            TO JEST DZIAŁAJĄCA MAPA
-        </div>
+        <div className="mapComponent" ref={mapRef}></div>
     );
 }
 
