@@ -1,0 +1,21 @@
+# system do zarządzania dockerami (kontener dockerów)
+
+
+services:
+  postgis:
+    build:
+      context: .. #project working directory
+      dockerfile: docker/postgis/Dockerfile
+    image: 'prge-postgis'   # a.k.a przepis na ciasto
+    container_name: 'prge-postgis' # a. k.    ciasto
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5444:5432
+    volumes:
+      - postgis-local-data:/var/lib/postgresql/data
+
+volumes:
+  postgis-local-data:
