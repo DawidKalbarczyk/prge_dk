@@ -21,7 +21,7 @@ services:
       - *env-postgres-user
       - *env-postgres-password
     ports:
-      - ${ENV_PORT}:5432
+      - ${POSTGRES_PORT}:5432
     volumes:
       - postgis-local-data:/var/lib/postgresql/data
   geoserver:
