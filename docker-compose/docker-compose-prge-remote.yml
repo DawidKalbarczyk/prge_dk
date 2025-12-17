@@ -15,7 +15,7 @@ services:
       context: .. #project working directory
       dockerfile: docker/postgis/Dockerfile
     image: 'prge-postgis'   # a.k.a przepis na ciasto
-    container_name: prge-postgis-$${{ENV_NAME}} # a. k.    ciasto
+    container_name: prge-postgis-${{ENV_NAME}} # a. k.    ciasto
     environment:
       - *env-postgres-db
       - *env-postgres-user
