@@ -28,3 +28,14 @@ docker system prune -a -f
 
 SPrawdzenie kontenera
 docker exec -it prge_2025_geoserver bash
+
+
+#Runner dla dockera dla github-actions:
+https://github.com/myoung34/docker-github-actions-runner
+
+
+
+17.12
+
+Naprawa runner poprzez usunięcie kontenera dockera  i postawienia od nowa i usuniecie z githuba runnera
+Postawienie bazy danych na serwerze:

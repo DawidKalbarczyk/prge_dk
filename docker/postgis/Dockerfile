@@ -1,3 +1,2 @@
 FROM pgrouting/pgrouting:16-3.5-3.7
 LABEL authors="Dawid"
-
