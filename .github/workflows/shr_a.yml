@@ -20,3 +20,9 @@ jobs:
 
       - name: Print
         run: echo 'witaj'
+
+      - name: Uruchom środowisko docker-compose
+        run: |
+          docker-compose -f 
+          ./docker-compose/docker-compose-prge-local.yml 
+          --env-file .env -p local-prge up --build -d
