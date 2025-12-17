@@ -4,8 +4,4 @@ router = APIRouter()
 
 @router.get("/endpoint")
 async def endpoint():
-    return [
-        {"Imie": "Adrian"},
-        {"Imie": "Bassam"},
-        {"Imie": "Mateusz"},
-    ]
+    return {"id": 1, "firstName": "Emily"}
