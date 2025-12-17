@@ -39,3 +39,5 @@ https://github.com/myoung34/docker-github-actions-runner
 
 Naprawa runner poprzez usunięcie kontenera dockera  i postawienia od nowa i usuniecie z githuba runnera
 Postawienie bazy danych na serwerze:
+
+Uzycie fastapi z endpointami w przypadku uzytkownikow

@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - env-test
+      - env-qa
+      - main
 
 
 permissions:
