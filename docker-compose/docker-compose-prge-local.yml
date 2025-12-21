@@ -1,0 +1,48 @@
+# system do zarządzania dockerami (kontener dockerów)
+
+#### Ukrywanie hasla  #####
+x-environment:
+  #DB
+  - &env-postgres-db POSTGRES_DB=${POSTGRES_DB}
+  - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
+  - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+
+###########################
+services:
+  postgis:
+    build:
+      context: .. #project working directory
+      dockerfile: docker/postgis/Dockerfile
+    image: 'prge-2025-postgis'   # a.k.a przepis na ciasto
+    container_name: 'prge-postgis' # a. k.    ciasto
+    environment:
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
+    ports:
+      - 5443:5432
+    volumes:
+      - postgis-local-data:/var/lib/postgresql/data
+  geoserver:
+    build:
+      context: ..
+      dockerfile: docker/geoserver/Dockerfile
+    image: 'prge_2025_geoserver'
+    container_name: 'prge_2025_geoserver'
+    ports:
+      - 9000:8080
+    volumes:
+      - ../.tmp/data:/opt/geoserver_data
+      - ../.tmp/geoserver-config:/opt/geoserver/data_dir
+  fastapi:
+    build:
+      context: ..
+      dockerfile: docker/fastapi/Dockerfile
+    image: 'prge_2025_fastapi'
+    container_name: 'prge_2025_fastapi'
+    ports:
+      - 10000:10000
+
+volumes: #Pozwala kontenerowi widzieć co siędzieje na moim dysku twardym komputera
+  postgis-local-data:
