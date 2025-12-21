@@ -17,7 +17,7 @@ concurrency: #parametr opisujący cykl pracy
 
 jobs: ## Definiuje to co ma być robione
   build:
-    runs-on: ubuntu-latest   #wybranie systemu githuba
+    runs-on: ubuntu-latest  #[self-hosted] w przypadku braku minut na github   #wybranie systemu githuba
     defaults: #definiowanie katalogu projektu
       run:
         working-directory: config/node/frontend
