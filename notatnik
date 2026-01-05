@@ -42,3 +42,8 @@ Naprawa runner poprzez usunięcie kontenera dockera  i postawienia od nowa i usu
 Postawienie bazy danych na serwerze:
 
 Uzycie fastapi z endpointami w przypadku uzytkownikow
+
+
+ cd E:\actions-runners
+ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
+ .\run.cmd
