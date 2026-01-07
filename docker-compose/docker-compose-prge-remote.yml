@@ -34,6 +34,15 @@ services:
       - ${GEOSERVER_PORT}:8080
     volumes:
       - ../.tmp/data-${ENV_NAME}:/opt/geoserver_data
+      -
+  fastapi:
+    build:
+      context: ..
+      dockerfile: docker/fastapi/Dockerfile
+    image: 'prge_2025_fastapi'
+    container_name: prge_2025_fastapi-${ENV_NAME}
+    ports:
+      - ${FASTAPI_PORT}:10000
 
 volumes: #Pozwala kontenerowi widzieć co siędzieje na moim dysku twardym komputera
   postgis-local-data:
