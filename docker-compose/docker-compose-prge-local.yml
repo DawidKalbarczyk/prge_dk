@@ -37,6 +37,10 @@ services:
       - ../.tmp/geoserver-config:/opt/geoserver/data_dir
 
 
+
+
+
+
   fastapi:
     build:
       context: ..
