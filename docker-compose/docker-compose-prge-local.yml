@@ -35,6 +35,7 @@ services:
     volumes:
       - ../.tmp/data:/opt/geoserver_data
       - ../.tmp/geoserver-config:/opt/geoserver/data_dir
+
   fastapi:
     build:
       context: ..
