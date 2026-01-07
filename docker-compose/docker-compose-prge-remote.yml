@@ -39,6 +39,7 @@ services:
     build:
       context: ..
       dockerfile: docker/fastapi/Dockerfile
+
     image: 'prge_2025_fastapi'
     container_name: prge_2025_fastapi-${ENV_NAME}
     ports:
