@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.routers.static_content import router
-from app.routers.db_insert import router.insert
+from app.routers.db_insert import router_insert
 app = FastAPI(title="Mapbook API")
 
 

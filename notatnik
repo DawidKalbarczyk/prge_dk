@@ -11,6 +11,7 @@ https://hub.docker.com/r/pgrouting/pgrouting/tags
 # komenda odpalenia docker-compose
 
 docker-compose -f ./docker-compose/docker-compose-prge-local.yml --env-file .env -p local-prge up --build -d
+docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge up --build -d
 
 https://docs.geoserver.org/main/en/user/installation/docker.html
 
@@ -41,3 +42,8 @@ Naprawa runner poprzez usunięcie kontenera dockera  i postawienia od nowa i usu
 Postawienie bazy danych na serwerze:
 
 Uzycie fastapi z endpointami w przypadku uzytkownikow
+
+
+ cd E:\actions-runners
+ Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
+ .\run.cmd
