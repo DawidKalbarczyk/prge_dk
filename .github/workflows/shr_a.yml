@@ -25,6 +25,11 @@ jobs:
       - name: Print
         run: echo 'witaj'
 
+      - name: Utwórz katalog danych dla środowiska
+        run: |
+          mkdir -p .tmp/data-${{github.ref_name}}
+          echo "Utworzono katalog .tmp/data-${{github.ref_name}}"
+
       - name: Utwórz plik .env dla docker-compose
         run: |
           echo "ENV_NAME=${{secrets.ENV_NAME}}" > .env
