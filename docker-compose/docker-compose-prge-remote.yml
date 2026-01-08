@@ -24,6 +24,7 @@ services:
       - ${POSTGRES_PORT}:5432
     volumes:
       - postgis-local-data:/var/lib/postgresql/data
+
   geoserver:
     build:
       context: ..
