@@ -25,6 +25,7 @@ services:
     volumes:
       - postgis-local-data:/var/lib/postgresql/data
 
+
   geoserver:
     build:
       context: ..
