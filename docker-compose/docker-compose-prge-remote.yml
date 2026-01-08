@@ -30,13 +30,10 @@ services:
       dockerfile: docker/geoserver/Dockerfile
     image: 'prge_2025_geoserver'
     container_name: prge_2025_geoserver-${ENV_NAME}
-    environment:
-      - ENV_NAME=${ENV_NAME}
     ports:
       - ${GEOSERVER_PORT}:8080
     volumes:
       - ../.tmp/data-${ENV_NAME}:/opt/geoserver_data
-
   fastapi:
     build:
       context: ..
