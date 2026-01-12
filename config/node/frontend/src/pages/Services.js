@@ -12,6 +12,20 @@ function Services(props) {
                 size="large"
                 component={Link}
                 to='/map'>Przejdź do mapy</Button>
+
+            <Button
+                className="services__button"
+                variant="contained"
+                size="large"
+                component={Link}
+                to='/newuser'>Przejdź do listy użytkowników</Button>
+
+            <Button
+                className="services__button"
+                variant="contained"
+                size="large"
+                component={Link}
+                to='/newuser'>Dodaj nowego użytkownika</Button>
         </div>
     );
 }
