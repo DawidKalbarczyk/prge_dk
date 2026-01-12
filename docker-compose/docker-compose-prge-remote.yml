@@ -40,9 +40,12 @@ services:
     build:
       context: ..
       dockerfile: docker/fastapi/Dockerfile
-
     image: 'prge_2025_fastapi'
     container_name: prge_2025_fastapi-${ENV_NAME}
+    environment:
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
     ports:
       - ${FASTAPI_PORT}:10000
 
