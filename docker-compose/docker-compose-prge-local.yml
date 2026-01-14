@@ -54,5 +54,22 @@ services:
     ports:
       - 10000:10000
 
+
+  node:
+    build:
+      context: ..
+      #TUtaj zmienić, dodać do folderu Dockerfile i zmienić tutaj ścieżke
+      dockerfile: docker/Dockerfile
+    image: 'prge_2025_node'
+    container_name: 'prge_2025_node'
+    volumes:
+      - ../config/node/frontend/src:/app/src
+      - ../config/node/frontend/package.json:/app/package.json
+      - ../config/node/frontend/package-lock.json:/app/package-lock.json
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
 volumes: #Pozwala kontenerowi widzieć co siędzieje na moim dysku twardym komputera
   postgis-local-data:
