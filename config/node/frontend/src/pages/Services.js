@@ -18,7 +18,7 @@ function Services(props) {
                 variant="contained"
                 size="large"
                 component={Link}
-                to='/newuser'>Przejdź do listy użytkowników</Button>
+                to='/list'>Przejdź do listy użytkowników</Button>
 
             <Button
                 className="services__button"
