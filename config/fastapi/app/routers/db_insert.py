@@ -1,23 +1,40 @@
 from fastapi import APIRouter
+from pydantic import BaseModel
 from sqlalchemy import create_engine, text
 router_insert = APIRouter()
 
-def connect_to_db():
-    return create_engine(
-        f"postgresql://postgres:postgres@localhost:5432/postgres",
-    )
-@router_insert.get("/insert_user")
-async def insert_user():
-    try:
-        db_connection = connect_to_db()
+from app.settings import db_name, db_user, db_password
 
-        sql_query = text(""" insert into users(name, posts, location)
-        values ('Jan', 3,'Gdańsk');
-        """)
+def connect_to_db(db_name: str, db_user: str, db_password: str):
+    return create_engine(
+        f"postgresql://{db_user}:{db_password}@postgis:5432/{db_name}"
+    )
+
+class UserData(BaseModel):
+    name: str
+    posts: int
+    location: str
+
+
+@router_insert.post("/insert_user")
+async def insert_user(user: UserData):
+    try:
+        db_connection = connect_to_db(db_name=db_name, db_user=db_user, db_password=db_password)
+
+        params = {
+            "name": user.name,
+            "posts": user.posts,
+            "location": user.location,
+        }
+        sql_query = text("""
+                        insert into users (name, posts, location) \
+                        VALUES (:name, :posts, :location); \
+                        """)
         with db_connection.connect() as conn:
-            result = conn.execute(sql_query)
+            result = conn.execute(sql_query, params)
+            conn.commit()
             print(result)
     except Exception as e:
         print(e)
         raise e
-    return {"statu":1}
+    return {"status":1}
