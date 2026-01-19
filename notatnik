@@ -47,3 +47,6 @@ Uzycie fastapi z endpointami w przypadku uzytkownikow
  cd E:\actions-runners
  Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
  .\run.cmd
+
+
+ //"homepage": "https://DawidKalbarczyk.github.io/prge_dk",
