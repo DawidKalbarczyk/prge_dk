@@ -40,7 +40,6 @@ jobs:
           echo "POSTGRES_PASSWORD=${{secrets.POSTGRES_PASSWORD}}" >> .env
       - name: Uruchom środowisko docker-compose
         env:
-          #DB
           ENV_NAME: ${{github.ref_name}}
           POSTGRES_PORT: ${{secrets.POSTGRES_PORT}}
           GEOSERVER_PORT: ${{secrets.GEOSERVER_PORT}}
