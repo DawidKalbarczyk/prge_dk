@@ -39,6 +39,17 @@ function MapComponent(props) {
                         serverType: 'geoserver',
                         transition: 300
                     })
+                }),
+                new TileLayer({
+                    source: new TileWMS({
+                        url: "http://localhost:9000/geoserver/prge/wms",
+                        params: {
+                            'LAYERS': 'prge:users',  // Zmień 'prge' na swój workspace
+                            'TILED': true
+                        },
+                        serverType: 'geoserver',
+                        transition: 300
+                    })
                 })
             ],
             view: new View({
